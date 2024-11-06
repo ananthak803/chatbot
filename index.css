@@ -1,0 +1,89 @@
+*
+{
+    padding: 0;
+    margin: 0;
+}
+
+body
+{
+    height: 100vh;
+    width: 100%;
+}
+
+.headerBox
+{
+    height: 3rem;
+    width: 100%;
+    background-color: rgb(3, 3, 3);
+}
+
+main
+{
+    height: 100%;
+    width:100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.box
+{
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    width: 100%;
+    overflow: scroll;    
+}
+
+.tx
+{
+    display: flex;
+    width: 100%;
+    margin: 1rem;
+    /* background-color: red; */
+    height: 4rem;
+    position: relative;
+}
+
+.textBox
+{
+    width: 15rem;
+    height:100%;
+    /* text-align: center; */
+    /* background-color: white; */
+    box-sizing: border-box;
+    padding:0 0 0 1rem;
+}
+
+.bot
+{
+    background-color: rgb(176, 169, 169);
+    border-radius: 0 1rem 1rem;
+   
+    
+}
+
+.user
+{
+    background-color: rgb(192, 240, 224);
+    border-radius: 1rem;
+    position: absolute;
+    right: 0;
+}
+
+
+.inputBox
+{
+    display: flex;
+    /* height: 100%; */
+    background-color: bisque;
+    margin: 1rem;
+}
+
+input
+{
+    flex-grow: 1;
+}
+.span
+{
+    width: 4rem;
+}
