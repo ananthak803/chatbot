@@ -47,7 +47,7 @@ function BotReply()
         return "Hello, How can I help you?";
     else if(doc.has("name"))
         return "I am a simple chatbot,dont have a name yet.";
-    else if(doc.has("anantha"||doc.has("create")))
+    else if(doc.has("anantha"||doc.has("creat"))||doc.has("made"))
         return "Anantha, is my creator.";
     else
         return "Sorry, I didn't understand that."
