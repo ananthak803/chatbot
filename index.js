@@ -1,59 +1,61 @@
+const box=document.querySelector(".box");
+const input = document.querySelector('input');
+
 function showUserInput()
 {
-    const box=document.querySelector(".box");
-    const input = document.querySelector('input');
-    const userInput =input.value;
-    const tx = document.createElement('div');
-    tx.setAttribute('class','tx');
-    const span = document.createElement('span');
-    span.classList.add('user');
-    span.classList.add('textBox');
-
-
-    span.textContent = userInput;
-    tx.appendChild(span);
-    box.appendChild(tx);
-
-    const tx1 = document.createElement('div');
-    tx1.setAttribute('class','tx');
-    const span1 = document.createElement('span');
-    span1.classList.add('bot');
-    
-    // userInput=userInput.toLowerCase();
-    if(userInput.includes("hello")||userInput.includes("hi")||userInput.includes("hey"))
-    {
-        span1.textContent = randomGreet();
-    }
-    tx1.appendChild(span1);
-    box.appendChild(tx1);
+    if(input.value=="")
+        return;
+    newUserDiv(input.value);
+    newBotDiv(BotReply());
     input.value="";
+    scrollToTop();
 }
 
-// function showBotReply()
-// {
-//     const input = document.querySelector('input');
-//     const userInput =input.value;
-    
-// }
-function randomGreet()
+
+function newBotDiv(msg)
 {
-    const x =Math.floor(Math.random()*5);
-    switch(x)
-    {
-        case 1:
-            return "go fuck your self";
-        case 2:
-            return "Hello how can I help you";
-        case 3:
-            return "Hi need any help?";
-        case 4:
-            return "Hey how is your day going";
-        default: return "sorry busy";
-    }
+    const div = document.createElement('div');
+    const span= document.createElement('span');
 
+    div.setAttribute('class','textDiv');
+    span.setAttribute('class','bot');
+
+    span.textContent = msg;
+
+    div.appendChild(span);
+    box.appendChild(div);
 }
 
-const send=document.querySelector('.span');
-send.addEventListener('click',showUserInput);
+function newUserDiv(msg)
+{
+    const div = document.createElement('div');
+    const span= document.createElement('span');
 
-// send.addEventListener("click",showBotReply);
+    div.setAttribute('class','textDiv userDiv');
+    span.setAttribute('class','user');
+
+    span.textContent = msg;
+
+    div.appendChild(span);
+    box.appendChild(div);
+}
+function BotReply()
+{
+    const Userinput = input.value.toLowerCase()  ;
+    const doc =nlp(Userinput);
+    if(doc.has("hi")||doc.has("hello")||doc.has("hey"))
+        return "Hello, How can I help you?";
+    else if(doc.has("name"))
+        return "I am a simple chatbot,dont have a name yet.";
+    else if(doc.has("anantha"||doc.has("create")))
+        return "Anantha, is my creator.";
+    else
+        return "Sorry, I didn't understand that."
+}
+
+function scrollToTop() {
+    box.scrollTop = box.scrollHeight;
+}
+
+const send=document.querySelector('.sendBtn');
+send.addEventListener('click',showUserInput);

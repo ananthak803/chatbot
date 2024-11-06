@@ -2,88 +2,126 @@
 {
     padding: 0;
     margin: 0;
+    box-sizing: border-box;
 }
 
 body
 {
     height: 100vh;
     width: 100%;
-}
-
-.headerBox
-{
-    height: 3rem;
-    width: 100%;
-    background-color: rgb(3, 3, 3);
+    font-size: 1.5rem;
 }
 
 main
 {
-    height: 100%;
-    width:100%;
+    height:inherit;
+    width: 100%;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    background-color: #eeeeee;
+}
+
+.headerBox
+{
+    height: 4rem;
+    background-color: #3B1E54;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #EEEEEE;
+    position: absolute;
 }
 
 .box
 {
+    margin-top: 4rem;
+    margin-bottom: 5rem;
     display: flex;
     flex-direction: column;
+    width:50%;
+    background-color: #EEEEEE;
     flex-grow: 1;
-    width: 100%;
-    overflow: scroll;    
+    padding: 1rem;
+    overflow: scroll ;
 }
 
-.tx
+.textDiv
 {
+    width: 100%;
     display: flex;
-    width: 100%;
-    margin: 1rem;
-    /* background-color: red; */
-    height: 4rem;
-    position: relative;
+    margin-bottom:0.2rem ;
 }
 
-.textBox
+.userDiv
 {
-    width: 15rem;
-    height:100%;
-    /* text-align: center; */
-    /* background-color: white; */
-    box-sizing: border-box;
-    padding:0 0 0 1rem;
+   justify-content: flex-end;
 }
+ 
 
 .bot
 {
-    background-color: rgb(176, 169, 169);
-    border-radius: 0 1rem 1rem;
-   
-    
+    padding: 1rem;
+    background-color: #75707a;
+    border-radius: 0 1rem 1rem 1rem;
+    border: 1px black solid;
 }
 
 .user
 {
-    background-color: rgb(192, 240, 224);
-    border-radius: 1rem;
-    position: absolute;
-    right: 0;
+    padding: 1rem;
+    background-color: #D4BEE4;
+    border-radius:1rem  1rem 0 1rem;
+    border: 1px black solid;
 }
+
+
 
 
 .inputBox
 {
+    height: 5rem;
+    width: 100%;
+    background-color: #EEEEEE;
     display: flex;
-    /* height: 100%; */
-    background-color: bisque;
-    margin: 1rem;
+    padding: 1rem;
+    justify-content: center;
+    position: absolute;
+    bottom: 0px;
 }
 
 input
 {
-    flex-grow: 1;
+    height:2rem;
+    width: 20rem;
+    border: none;
+    border-radius:1rem 0 0 1rem;
+    outline: none;
+    padding: 0 0 0 1rem;
 }
-.span
+.sendBtn
 {
-    width: 4rem;
+   height: 75%;
+   width:4rem;
+   border: none;
+   border-radius: 0 1rem 1rem 0;
+   background-color: #3B1E54;
+   color: white;
+   font-weight: 600;
 }
+
+.sendBtn:hover
+{
+   background-color: #28113d;
+}
+
+
+@media screen and (min-width: 300px) and (max-width:480px)
+{
+    .box
+    {
+        width: 90%;
+    }
+}
+
